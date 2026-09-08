@@ -1,0 +1,15 @@
+{
+  "name": "ai-chat",
+  "version": "1.0.0",
+  "description": "A very simple beginner-friendly AI Chat Desktop Application with multiple LLMs and Personas",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "electron": "^34.0.0"
+  }
+}

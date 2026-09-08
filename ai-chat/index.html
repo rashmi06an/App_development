@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI CHAT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Main Container -->
+  <div class="app-container">
+    
+    <!-- Top Header Bar -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="app-logo">⚡</div>
+        <div class="header-titles">
+          <h1>AI CHAT</h1>
+          <span class="header-subtitle">Multi-LLM &amp; Persona Desktop App</span>
+        </div>
+      </div>
+      <!-- New Chat Button -->
+      <button id="new-chat-btn" class="btn-secondary" title="Start a fresh conversation">
+        🔄 New Chat
+      </button>
+    </header>
+
+    <!-- Controls Bar: Model & Persona Selection -->
+    <section class="controls-panel">
+      <!-- Model Dropdown -->
+      <div class="control-group">
+        <label for="model-select">Model:</label>
+        <select id="model-select" class="styled-select">
+          <optgroup label="Groq (Fast &amp; Free with 1 Key)">
+            <option value="groq:llama-3.1-8b-instant" selected>Llama 3.1 8B Instant (Groq)</option>
+            <option value="groq:mixtral-8x7b-32768">Mixtral 8x7B (Mistral)</option>
+            <option value="groq:gemma2-9b-it">Gemma 2 9B (Google)</option>
+          </optgroup>
+          <optgroup label="Other Providers (Optional)">
+            <option value="openai">OpenAI (GPT-4o-mini)</option>
+            <option value="gemini">Gemini (1.5 Flash)</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- Persona Dropdown -->
+      <div class="control-group">
+        <label for="persona-select">Persona:</label>
+        <select id="persona-select" class="styled-select">
+          <option value="normal">Normal Assistant</option>
+          <option value="coding">Coding Mentor</option>
+          <option value="motivational">Motivational Coach</option>
+          <option value="wrestling">Wrestling Champion</option>
+          <option value="bollywood">Bollywood Superstar</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Active Persona Description Banner -->
+    <div id="persona-banner" class="persona-banner">
+      <span class="persona-badge" id="persona-badge">Normal Assistant</span>
+      <span class="persona-desc" id="persona-desc">You are a helpful AI assistant.</span>
+    </div>
+
+    <!-- Chat Messages Container -->
+    <main id="chat-box" class="chat-box">
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">💬</div>
+        <h2>Welcome to AI Chat!</h2>
+        <p>Pick an AI Model and Persona above, then type a message below to start chatting.</p>
+      </div>
+    </main>
+
+    <!-- Bottom Input & Send Form -->
+    <footer class="input-container">
+      <form id="chat-form" class="chat-form">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Type your message here..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="send-btn" class="btn-primary">
+          <span>SEND</span>
+          <span class="send-icon">➤</span>
+        </button>
+      </form>
+    </footer>
+
+  </div>
+
+  <!-- Frontend Logic -->
+  <script src="renderer.js"></script>
+</body>
+</html>
